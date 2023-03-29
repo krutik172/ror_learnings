@@ -1,0 +1,2349 @@
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20230328053019)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "email" varchar, "password_digest" varchar, "remember_token" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230328053019"]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-03-28 05:36:10.308660"], ["updated_at", "2023-03-28 05:36:10.308660"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20230328053019)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (0.1ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20230328053019"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2023-03-29 11:22:44 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ronak/.rvm/gems/ruby-3.1.2/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ronak/.rvm/gems/ruby-3.1.2/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.6ms | Allocations: 585)
+Completed 200 OK in 38ms (Views: 4.8ms | ActiveRecord: 0.0ms | Allocations: 4664)
+
+
+Started GET "/" for 127.0.0.1 at 2023-03-29 12:21:15 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+You have 1 pending migration:
+
+20230329055432_create_users.rb
+
+
+):
+  
+activerecord (7.0.4.3) lib/active_record/migration.rb:627:in `check_pending!'
+activerecord (7.0.4.3) lib/active_record/migration.rb:592:in `block (2 levels) in call'
+activesupport (7.0.4.3) lib/active_support/file_update_checker.rb:83:in `execute'
+activerecord (7.0.4.3) lib/active_record/migration.rb:597:in `block in call'
+activerecord (7.0.4.3) lib/active_record/migration.rb:589:in `synchronize'
+activerecord (7.0.4.3) lib/active_record/migration.rb:589:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.6.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.6.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.6.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20230329055432)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "email" varchar, "password_digest" varchar, "remember_token" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230329055432"]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2023-03-29 12:21:34 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ronak/.rvm/gems/ruby-3.1.2/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ronak/.rvm/gems/ruby-3.1.2/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.6ms | Allocations: 477)
+Completed 200 OK in 7ms (Views: 4.1ms | ActiveRecord: 0.0ms | Allocations: 3324)
+
+
+Started GET "/users" for 127.0.0.1 at 2023-03-29 12:27:06 +0530
+  
+SyntaxError (/home/ronak/ronak/rails/ror_learning_2/custom_authentication/app/controllers/users_controller.rb:33: syntax error, unexpected `end', expecting end-of-input):
+  
+app/controllers/users_controller.rb:33: syntax error, unexpected `end', expecting end-of-input
+app/controllers/users_controller.rb:33: syntax error, unexpected `end', expecting end-of-input
+app/controllers/users_controller.rb:33: syntax error, unexpected `end', expecting end-of-input
+Started GET "/users" for 127.0.0.1 at 2023-03-29 12:27:36 +0530
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for UsersController):
+  
+actionpack (7.0.4.3) lib/abstract_controller/base.rb:146:in `process'
+actionview (7.0.4.3) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.4.3) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4.3) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.6.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.6.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.6.4) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.6.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.6.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.6.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.0.4.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.6.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.6.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.6.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20230329055432)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (0.1ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20230329055432"]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20230329065842)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "email" varchar, "password_digest" varchar, "remember_token" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230329065842"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2023-03-29 12:29:02 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ronak/.rvm/gems/ruby-3.1.2/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ronak/.rvm/gems/ruby-3.1.2/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.9ms | Allocations: 477)
+Completed 200 OK in 9ms (Views: 6.1ms | ActiveRecord: 0.0ms | Allocations: 3324)
+
+
+Started GET "/users" for 127.0.0.1 at 2023-03-29 12:29:05 +0530
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:6
+  Rendered users/index.html.erb within layouts/application (Duration: 10.4ms | Allocations: 1361)
+  Rendered layout layouts/application.html.erb (Duration: 214.8ms | Allocations: 94597)
+Completed 200 OK in 224ms (Views: 217.0ms | ActiveRecord: 0.3ms | Allocations: 96417)
+
+
+Started GET "/" for 127.0.0.1 at 2023-03-29 14:30:55 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ronak/.rvm/gems/ruby-3.1.2/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ronak/.rvm/gems/ruby-3.1.2/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.6ms | Allocations: 477)
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 0.0ms | Allocations: 3339)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2023-03-29 14:31:02 +0530
+  
+SyntaxError (/home/ronak/ronak/rails/ror_learning_2/custom_authentication/app/controllers/users_controller.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+  before-action :authenticate_user
+                ^
+):
+  
+app/controllers/users_controller.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/controllers/users_controller.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/controllers/users_controller.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+Started GET "/users/new" for 127.0.0.1 at 2023-03-29 14:35:10 +0530
+  
+SyntaxError (/home/ronak/ronak/rails/ror_learning_2/custom_authentication/app/controllers/users_controller.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+  before-action :authenticate_user
+                ^
+):
+  
+app/controllers/users_controller.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/controllers/users_controller.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/controllers/users_controller.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+Started GET "/users/new" for 127.0.0.1 at 2023-03-29 14:35:11 +0530
+  
+SyntaxError (/home/ronak/ronak/rails/ror_learning_2/custom_authentication/app/controllers/users_controller.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+  before-action :authenticate_user
+                ^
+):
+  
+app/controllers/users_controller.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/controllers/users_controller.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/controllers/users_controller.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+Started GET "/users/new" for 127.0.0.1 at 2023-03-29 14:35:12 +0530
+  
+SyntaxError (/home/ronak/ronak/rails/ror_learning_2/custom_authentication/app/controllers/users_controller.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+  before-action :authenticate_user
+                ^
+):
+  
+app/controllers/users_controller.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/controllers/users_controller.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/controllers/users_controller.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+Started GET "/users/new" for 127.0.0.1 at 2023-03-29 14:35:12 +0530
+  
+SyntaxError (/home/ronak/ronak/rails/ror_learning_2/custom_authentication/app/controllers/users_controller.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+  before-action :authenticate_user
+                ^
+):
+  
+app/controllers/users_controller.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/controllers/users_controller.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/controllers/users_controller.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+Started GET "/users/new" for 127.0.0.1 at 2023-03-29 14:35:20 +0530
+  
+SyntaxError (/home/ronak/ronak/rails/ror_learning_2/custom_authentication/app/controllers/users_controller.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+  before-action :authenticate_user
+                ^
+):
+  
+app/controllers/users_controller.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/controllers/users_controller.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/controllers/users_controller.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+Started GET "/users/new" for 127.0.0.1 at 2023-03-29 14:36:09 +0530
+  
+SyntaxError (/home/ronak/ronak/rails/ror_learning_2/custom_authentication/app/controllers/users_controller.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+  before-action :authenticate_user!, except: %...
+                ^
+):
+  
+app/controllers/users_controller.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/controllers/users_controller.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/controllers/users_controller.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+Started GET "/users/new" for 127.0.0.1 at 2023-03-29 14:36:10 +0530
+  
+SyntaxError (/home/ronak/ronak/rails/ror_learning_2/custom_authentication/app/controllers/users_controller.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+  before-action :authenticate_user!, except: %...
+                ^
+):
+  
+app/controllers/users_controller.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/controllers/users_controller.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/controllers/users_controller.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+Started GET "/users/new" for 127.0.0.1 at 2023-03-29 14:36:10 +0530
+  
+SyntaxError (/home/ronak/ronak/rails/ror_learning_2/custom_authentication/app/controllers/users_controller.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+  before-action :authenticate_user!, except: %...
+                ^
+):
+  
+app/controllers/users_controller.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/controllers/users_controller.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/controllers/users_controller.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+Started GET "/users/new" for 127.0.0.1 at 2023-03-29 14:36:11 +0530
+  
+SyntaxError (/home/ronak/ronak/rails/ror_learning_2/custom_authentication/app/controllers/users_controller.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+  before-action :authenticate_user!, except: %...
+                ^
+):
+  
+app/controllers/users_controller.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/controllers/users_controller.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/controllers/users_controller.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+Started GET "/users/new" for 127.0.0.1 at 2023-03-29 14:36:11 +0530
+  
+SyntaxError (/home/ronak/ronak/rails/ror_learning_2/custom_authentication/app/controllers/users_controller.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+  before-action :authenticate_user!, except: %...
+                ^
+):
+  
+app/controllers/users_controller.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/controllers/users_controller.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/controllers/users_controller.rb:3: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+Started GET "/users/new" for 127.0.0.1 at 2023-03-29 14:36:40 +0530
+Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 1ms (Allocations: 875)
+
+
+  
+SyntaxError (/home/ronak/ronak/rails/ror_learning_2/custom_authentication/app/models/user.rb:4: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+...st, :remember_token, presence :true
+...                              ^
+/home/ronak/ronak/rails/ror_learning_2/custom_authentication/app/models/user.rb:5: syntax error, unexpected ':', expecting `end'
+...  validates :username, :email :unique =>  true
+...                              ^
+):
+  
+app/models/user.rb:4: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/user.rb:5: syntax error, unexpected ':', expecting `end'
+app/models/user.rb:4: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/user.rb:5: syntax error, unexpected ':', expecting `end'
+app/models/user.rb:4: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/user.rb:5: syntax error, unexpected ':', expecting `end'
+app/controllers/users_controller.rb:9:in `new'
+Started GET "/users/new" for 127.0.0.1 at 2023-03-29 14:37:14 +0530
+Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 3ms (Allocations: 858)
+
+
+  
+SyntaxError (/home/ronak/ronak/rails/ror_learning_2/custom_authentication/app/models/user.rb:4: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+...l, :password_digest, presence :true
+...                              ^
+/home/ronak/ronak/rails/ror_learning_2/custom_authentication/app/models/user.rb:5: syntax error, unexpected ':', expecting `end'
+...  validates :username, :email :unique =>  true
+...                              ^
+):
+  
+app/models/user.rb:4: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/user.rb:5: syntax error, unexpected ':', expecting `end'
+app/models/user.rb:4: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/user.rb:5: syntax error, unexpected ':', expecting `end'
+app/models/user.rb:4: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/user.rb:5: syntax error, unexpected ':', expecting `end'
+app/controllers/users_controller.rb:9:in `new'
+Started GET "/" for 127.0.0.1 at 2023-03-29 14:37:26 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ronak/.rvm/gems/ruby-3.1.2/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ronak/.rvm/gems/ruby-3.1.2/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.2ms | Allocations: 280)
+Completed 200 OK in 3ms (Views: 2.0ms | Allocations: 915)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2023-03-29 14:37:35 +0530
+Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 1ms (Allocations: 914)
+
+
+  
+SyntaxError (/home/ronak/ronak/rails/ror_learning_2/custom_authentication/app/models/user.rb:4: syntax error, unexpected local variable or method, expecting `end'
+...mail, :password_digest presence :true
+...                       ^~~~~~~~
+/home/ronak/ronak/rails/ror_learning_2/custom_authentication/app/models/user.rb:5: syntax error, unexpected ':', expecting `end'
+...  validates :username, :email :unique =>  true
+...                              ^
+):
+  
+app/models/user.rb:4: syntax error, unexpected local variable or method, expecting `end'
+app/models/user.rb:5: syntax error, unexpected ':', expecting `end'
+app/models/user.rb:4: syntax error, unexpected local variable or method, expecting `end'
+app/models/user.rb:5: syntax error, unexpected ':', expecting `end'
+app/models/user.rb:4: syntax error, unexpected local variable or method, expecting `end'
+app/models/user.rb:5: syntax error, unexpected ':', expecting `end'
+app/controllers/users_controller.rb:9:in `new'
+Started GET "/users/new" for 127.0.0.1 at 2023-03-29 14:37:52 +0530
+Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 1ms (Allocations: 858)
+
+
+  
+SyntaxError (/home/ronak/ronak/rails/ror_learning_2/custom_authentication/app/models/user.rb:4: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+...l, :password_digest, presence :true
+...                              ^
+/home/ronak/ronak/rails/ror_learning_2/custom_authentication/app/models/user.rb:5: syntax error, unexpected ':', expecting `end'
+...  validates :username, :email :unique =>  true
+...                              ^
+):
+  
+app/models/user.rb:4: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/user.rb:5: syntax error, unexpected ':', expecting `end'
+app/models/user.rb:4: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/user.rb:5: syntax error, unexpected ':', expecting `end'
+app/models/user.rb:4: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/user.rb:5: syntax error, unexpected ':', expecting `end'
+app/controllers/users_controller.rb:9:in `new'
+Started GET "/users/new" for 127.0.0.1 at 2023-03-29 14:38:15 +0530
+Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 1ms (Allocations: 911)
+
+
+  
+SyntaxError (/home/ronak/ronak/rails/ror_learning_2/custom_authentication/app/models/user.rb:4: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+...l, :password_digest, presence :true
+...                              ^
+/home/ronak/ronak/rails/ror_learning_2/custom_authentication/app/models/user.rb:5: syntax error, unexpected ':', expecting `end'
+...   validate :username, :email :unique =>  true
+...                              ^
+):
+  
+app/models/user.rb:4: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/user.rb:5: syntax error, unexpected ':', expecting `end'
+app/models/user.rb:4: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/user.rb:5: syntax error, unexpected ':', expecting `end'
+app/models/user.rb:4: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/user.rb:5: syntax error, unexpected ':', expecting `end'
+app/controllers/users_controller.rb:9:in `new'
+Started GET "/users/new" for 127.0.0.1 at 2023-03-29 14:38:28 +0530
+Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 1ms (Allocations: 858)
+
+
+  
+SyntaxError (/home/ronak/ronak/rails/ror_learning_2/custom_authentication/app/models/user.rb:4: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+...l, :password_digest, presence :true
+...                              ^
+/home/ronak/ronak/rails/ror_learning_2/custom_authentication/app/models/user.rb:5: syntax error, unexpected ':', expecting `end'
+...  validates :username, :email :unique =>  true
+...                              ^
+):
+  
+app/models/user.rb:4: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/user.rb:5: syntax error, unexpected ':', expecting `end'
+app/models/user.rb:4: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/user.rb:5: syntax error, unexpected ':', expecting `end'
+app/models/user.rb:4: syntax error, unexpected symbol literal, expecting `do' or '{' or '('
+app/models/user.rb:5: syntax error, unexpected ':', expecting `end'
+app/controllers/users_controller.rb:9:in `new'
+Started GET "/users/new" for 127.0.0.1 at 2023-03-29 14:39:03 +0530
+Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 1ms (Allocations: 858)
+
+
+  
+SyntaxError (/home/ronak/ronak/rails/ror_learning_2/custom_authentication/app/models/user.rb:5: syntax error, unexpected ':', expecting `end'
+...  validates :username, :email :unique =>  true
+...                              ^
+):
+  
+app/models/user.rb:5: syntax error, unexpected ':', expecting `end'
+app/models/user.rb:5: syntax error, unexpected ':', expecting `end'
+app/models/user.rb:5: syntax error, unexpected ':', expecting `end'
+app/controllers/users_controller.rb:9:in `new'
+Started GET "/users/new" for 127.0.0.1 at 2023-03-29 14:39:20 +0530
+Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 1ms (Allocations: 912)
+
+
+  
+SyntaxError (/home/ronak/ronak/rails/ror_learning_2/custom_authentication/app/models/user.rb:5: syntax error, unexpected local variable or method, expecting `end'
+...es :username, :email uniqueness:  true
+...                     ^~~~~~~~~~
+):
+  
+app/models/user.rb:5: syntax error, unexpected local variable or method, expecting `end'
+app/models/user.rb:5: syntax error, unexpected local variable or method, expecting `end'
+app/models/user.rb:5: syntax error, unexpected local variable or method, expecting `end'
+app/controllers/users_controller.rb:9:in `new'
+Started GET "/users/new" for 127.0.0.1 at 2023-03-29 14:39:29 +0530
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 11.2ms | Allocations: 5227)
+  Rendered users/new.html.erb within layouts/application (Duration: 12.5ms | Allocations: 5565)
+  Rendered layout layouts/application.html.erb (Duration: 55.6ms | Allocations: 40589)
+Completed 200 OK in 65ms (Views: 56.9ms | ActiveRecord: 0.5ms | Allocations: 47785)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2023-03-29 14:40:30 +0530
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.5ms | Allocations: 2299)
+  Rendered users/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 2614)
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 16659)
+Completed 200 OK in 18ms (Views: 13.9ms | ActiveRecord: 0.5ms | Allocations: 20795)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2023-03-29 14:43:38 +0530
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.4ms | Allocations: 2341)
+  Rendered users/new.html.erb within layouts/application (Duration: 4.3ms | Allocations: 2667)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 16806)
+Completed 200 OK in 20ms (Views: 15.0ms | ActiveRecord: 0.6ms | Allocations: 20994)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-29 14:43:54 +0530
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"ronak", "email"=>"r@r.com", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f5f0616f0a0>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"ronak", "email"=>"r@r.com", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User", "controller"=>"users", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:21:in `block in create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "ronak"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `block in create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "r@r.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `block in create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:21:in `block in create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.5ms | Allocations: 2213)
+  Rendered users/new.html.erb within layouts/application (Duration: 3.9ms | Allocations: 2308)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 4609)
+Completed 422 Unprocessable Entity in 20ms (Views: 7.4ms | ActiveRecord: 0.5ms | Allocations: 10725)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-29 14:44:09 +0530
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"ronak", "email"=>"r@r.com", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f5f060729b8>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"ronak", "email"=>"r@r.com", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User", "controller"=>"users", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:21:in `block in create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "ronak"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `block in create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "r@r.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `block in create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:21:in `block in create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 4.6ms | Allocations: 1989)
+  Rendered users/new.html.erb within layouts/application (Duration: 5.0ms | Allocations: 2076)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 4269)
+Completed 422 Unprocessable Entity in 17ms (Views: 9.6ms | ActiveRecord: 0.5ms | Allocations: 8153)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2023-03-29 14:51:35 +0530
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.8ms | Allocations: 2134)
+  Rendered users/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 2447)
+  Rendered layout layouts/application.html.erb (Duration: 13.6ms | Allocations: 16584)
+Completed 200 OK in 19ms (Views: 14.7ms | ActiveRecord: 0.2ms | Allocations: 20344)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-29 14:51:44 +0530
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"ronak", "email"=>"r@r.com", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f5f0617dc90>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"ronak", "email"=>"r@r.com", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User", "controller"=>"users", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:21:in `block in create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "ronak"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `block in create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "r@r.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `block in create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:21:in `block in create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 6.3ms | Allocations: 2294)
+  Rendered users/new.html.erb within layouts/application (Duration: 6.8ms | Allocations: 2381)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 4567)
+Completed 422 Unprocessable Entity in 19ms (Views: 11.6ms | ActiveRecord: 0.4ms | Allocations: 8855)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2023-03-29 14:52:18 +0530
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.2ms | Allocations: 1742)
+  Rendered users/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1855)
+  Rendered layout layouts/application.html.erb (Duration: 12.6ms | Allocations: 15732)
+Completed 200 OK in 17ms (Views: 13.4ms | ActiveRecord: 0.5ms | Allocations: 19560)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-29 14:52:28 +0530
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"ronak", "email"=>"r@r.com", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f5f04df4cc8>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"ronak", "email"=>"r@r.com", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User", "controller"=>"users", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:21:in `block in create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "ronak"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `block in create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "r@r.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:21:in `block in create'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "remember_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "ronak"], ["email", "r@r.com"], ["password_digest", "[FILTERED]"], ["remember_token", "[FILTERED]"], ["created_at", "2023-03-29 09:22:28.763075"], ["updated_at", "2023-03-29 09:22:28.763075"]]
+  ↳ app/controllers/users_controller.rb:21:in `block in create'
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:21:in `block in create'
+Redirected to http://127.0.0.1:3000/users/1
+Completed 302 Found in 8ms (ActiveRecord: 2.3ms | Allocations: 5501)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2023-03-29 14:52:28 +0530
+Processing by UsersController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1549)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 1641)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 1968)
+
+
+  
+ActionView::Template::Error ('nil' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+    1: <p style="color: green"><%= notice %></p>
+    2: 
+    3: <%= render @user %>
+    4: 
+    5: <div>
+    6:   <%= link_to "Edit this user", edit_user_path(@user) %> |
+  
+app/views/users/show.html.erb:3
+Started GET "/users/new" for 127.0.0.1 at 2023-03-29 14:53:39 +0530
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.4ms | Allocations: 1758)
+  Rendered users/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1871)
+  Rendered layout layouts/application.html.erb (Duration: 19.6ms | Allocations: 15849)
+Completed 200 OK in 25ms (Views: 20.9ms | ActiveRecord: 0.4ms | Allocations: 19708)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-29 14:53:53 +0530
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"ronak", "email"=>"r@r.com", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f5f07f084b8>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"ronak", "email"=>"r@r.com", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User", "controller"=>"users", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:22:in `block in create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "ronak"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `block in create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "r@r.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `block in create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:22:in `block in create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 8.0ms | Allocations: 3310)
+  Rendered users/new.html.erb within layouts/application (Duration: 8.2ms | Allocations: 3397)
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | Allocations: 5583)
+Completed 422 Unprocessable Entity in 21ms (Views: 14.3ms | ActiveRecord: 0.3ms | Allocations: 9897)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-29 14:54:09 +0530
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"ronak1", "email"=>"r@r.com1", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f5f06328ea0>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"ronak1", "email"=>"r@r.com1", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User", "controller"=>"users", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:22:in `block in create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "ronak1"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `block in create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "r@r.com1"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `block in create'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "remember_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "ronak1"], ["email", "r@r.com1"], ["password_digest", "[FILTERED]"], ["remember_token", "[FILTERED]"], ["created_at", "2023-03-29 09:24:09.406671"], ["updated_at", "2023-03-29 09:24:09.406671"]]
+  ↳ app/controllers/users_controller.rb:22:in `block in create'
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:22:in `block in create'
+Redirected to http://127.0.0.1:3000/users/2
+Completed 302 Found in 22ms (ActiveRecord: 4.4ms | Allocations: 4150)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2023-03-29 14:54:09 +0530
+Processing by UsersController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 1201)
+  Rendered layout layouts/application.html.erb (Duration: 0.7ms | Allocations: 1280)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 1531)
+
+
+  
+ActionView::Template::Error ('nil' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+    1: <p style="color: green"><%= notice %></p>
+    2: 
+    3: <%= render @user %>
+    4: 
+    5: <div>
+    6:   <%= link_to "Edit this user", edit_user_path(@user) %> |
+  
+app/views/users/show.html.erb:3
+Started GET "/users/new" for 127.0.0.1 at 2023-03-29 14:54:22 +0530
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.2ms | Allocations: 1761)
+  Rendered users/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1874)
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | Allocations: 15818)
+Completed 200 OK in 20ms (Views: 16.1ms | ActiveRecord: 0.5ms | Allocations: 19674)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-29 14:54:36 +0530
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"ronak2", "email"=>"r@r.com2", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f5f04c5b628>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"ronak2", "email"=>"r@r.com2", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User", "controller"=>"users", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:22:in `block in create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "ronak2"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `block in create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "r@r.com2"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `block in create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "remember_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "ronak2"], ["email", "r@r.com2"], ["password_digest", "[FILTERED]"], ["remember_token", "[FILTERED]"], ["created_at", "2023-03-29 09:24:36.935735"], ["updated_at", "2023-03-29 09:24:36.935735"]]
+  ↳ app/controllers/users_controller.rb:22:in `block in create'
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:22:in `block in create'
+Redirected to http://127.0.0.1:3000/users/3
+Completed 302 Found in 13ms (ActiveRecord: 3.7ms | Allocations: 4627)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2023-03-29 14:54:36 +0530
+Processing by UsersController#show as TURBO_STREAM
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:58:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.5ms | Allocations: 239)
+  Rendered users/show.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1074)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 3258)
+Completed 200 OK in 8ms (Views: 4.7ms | ActiveRecord: 0.2ms | Allocations: 4776)
+
+
+Started GET "/users" for 127.0.0.1 at 2023-03-29 14:54:41 +0530
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 2124)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 2203)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 2455)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass
+
+'.freeze;   @users.each do |user| 
+                  ^^^^^):
+    3: <h1>Users</h1>
+    4: 
+    5: <div id="users">
+    6:   <% @users.each do |user| %>
+    7:     <%= render user %>
+    8:     <p>
+    9:       <%= link_to "Show this user", user %>
+  
+app/views/users/index.html.erb:6
+Started GET "/users/3" for 127.0.0.1 at 2023-03-29 14:54:44 +0530
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:58:in `set_user'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_user.html.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered users/show.html.erb within layouts/application (Duration: 1.7ms | Allocations: 577)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 2776)
+Completed 200 OK in 9ms (Views: 7.2ms | ActiveRecord: 0.1ms | Allocations: 3512)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:48 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms | Allocations: 1862)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:48 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 471)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:48 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 377)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:48 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 380)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:48 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 368)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:48 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 365)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:48 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 362)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:48 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 380)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:48 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 368)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:48 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 9ms (ActiveRecord: 0.0ms | Allocations: 386)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:48 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 365)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:48 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 362)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:48 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 377)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:48 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 371)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:48 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 386)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:48 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 362)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:48 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 365)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:48 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 380)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:48 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 362)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:48 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 371)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:48 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 365)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:52 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms | Allocations: 387)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:52 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 386)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:52 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 386)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:52 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 368)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:52 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 377)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:52 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 362)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:52 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 377)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:52 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 395)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:52 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 407)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:52 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 383)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:52 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 347)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:52 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 377)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:52 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 368)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:52 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 380)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:52 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 383)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:52 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 377)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:52 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 389)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:52 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 386)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:52 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 383)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:52 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 362)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:52 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 362)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:53 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms | Allocations: 381)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:53 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 356)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:53 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 374)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:53 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 398)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:53 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 371)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:53 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 383)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:53 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 395)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:53 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 362)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:53 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 371)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:53 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 383)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:53 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 359)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:53 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 377)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:53 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 371)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:53 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 380)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:53 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 371)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:53 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 377)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:53 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 377)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:53 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 365)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:53 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 386)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:53 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 374)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:53 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 368)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:53 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 378)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:53 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 368)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:53 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 380)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:53 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 371)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:53 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 404)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:53 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 374)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:53 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 365)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:53 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 362)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:53 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 371)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:53 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 359)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:53 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 389)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:53 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 395)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:53 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 377)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:53 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 383)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:53 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 401)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:53 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 374)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:53 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 368)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:53 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 383)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:53 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 374)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:53 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 389)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:17:53 +0530
+Processing by UsersController#login as HTML
+Redirected to http://127.0.0.1:3000/login
+Filter chain halted as :require_login? rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 383)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:18:59 +0530
+Processing by UsersController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 3.4ms | Allocations: 3081)
+  Rendered layout layouts/application.html.erb (Duration: 35.2ms | Allocations: 38165)
+Completed 200 OK in 46ms (Views: 36.8ms | ActiveRecord: 0.5ms | Allocations: 46479)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-29 15:19:05 +0530
+Processing by UsersController#log_in as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"ro", "password"=>"[FILTERED]"}, "commit"=>"login"}
+[31mUnpermitted parameter: :password. Context: { controller: UsersController, action: log_in, request: #<ActionDispatch::Request:0x00007f2858061af8>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"ro", "password"=>"[FILTERED]"}, "commit"=>"login", "controller"=>"users", "action"=>"log_in"} }[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ro"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:61:in `log_in'
+Redirected to http://127.0.0.1:3000/login
+Completed 302 Found in 7ms (ActiveRecord: 0.2ms | Allocations: 2831)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:19:05 +0530
+Processing by UsersController#login as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 1.2ms | Allocations: 985)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 3291)
+Completed 200 OK in 6ms (Views: 5.9ms | ActiveRecord: 0.0ms | Allocations: 3670)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-29 15:19:20 +0530
+Processing by UsersController#log_in as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"r@r.com", "password"=>"[FILTERED]"}, "commit"=>"login"}
+[31mUnpermitted parameter: :password. Context: { controller: UsersController, action: log_in, request: #<ActionDispatch::Request:0x00007f2858006018>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"r@r.com", "password"=>"[FILTERED]"}, "commit"=>"login", "controller"=>"users", "action"=>"log_in"} }[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "r@r.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:61:in `log_in'
+[31mUnpermitted parameter: :password. Context: { controller: UsersController, action: log_in, request: #<ActionDispatch::Request:0x00007f2858006018>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"r@r.com", "password"=>"[FILTERED]"}, "commit"=>"login", "controller"=>"users", "action"=>"log_in"} }[0m
+Redirected to http://127.0.0.1:3000/login
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 1198)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:19:20 +0530
+Processing by UsersController#login as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 1.7ms | Allocations: 879)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 3072)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms | Allocations: 3354)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-29 15:20:39 +0530
+Processing by UsersController#log_in as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"vsd", "password"=>"[FILTERED]"}, "commit"=>"login"}
+[31mUnpermitted parameter: :password. Context: { controller: UsersController, action: log_in, request: #<ActionDispatch::Request:0x00007f282bf10c98>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"vsd", "password"=>"[FILTERED]"}, "commit"=>"login", "controller"=>"users", "action"=>"log_in"} }[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "vsd"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `log_in'
+Redirected to http://127.0.0.1:3000/login
+Completed 302 Found in 5ms (ActiveRecord: 0.6ms | Allocations: 3091)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:20:39 +0530
+Processing by UsersController#login as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1133)
+  Rendered layout layouts/application.html.erb (Duration: 16.9ms | Allocations: 14979)
+Completed 200 OK in 21ms (Views: 18.0ms | ActiveRecord: 0.4ms | Allocations: 17181)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-29 15:22:04 +0530
+Processing by UsersController#log_in as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"g@gg.com", "password"=>"[FILTERED]"}, "commit"=>"login"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "g@gg.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `log_in'
+Redirected to http://127.0.0.1:3000/login
+Completed 302 Found in 6ms (ActiveRecord: 0.6ms | Allocations: 3027)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:22:04 +0530
+Processing by UsersController#login as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1381)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 15502)
+Completed 200 OK in 14ms (Views: 10.7ms | ActiveRecord: 0.3ms | Allocations: 18143)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:22:14 +0530
+Processing by UsersController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 5.6ms | Allocations: 1295)
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 3852)
+Completed 200 OK in 19ms (Views: 17.1ms | ActiveRecord: 0.0ms | Allocations: 4707)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-29 15:22:17 +0530
+Processing by UsersController#log_in as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"ro", "password"=>"[FILTERED]"}, "commit"=>"login"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ro"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `log_in'
+Redirected to http://127.0.0.1:3000/login
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 974)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:22:17 +0530
+Processing by UsersController#login as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 1.7ms | Allocations: 894)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 3086)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.0ms | Allocations: 3430)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-29 15:22:34 +0530
+Processing by UsersController#log_in as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"r@r.com", "password"=>"[FILTERED]"}, "commit"=>"login"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "r@r.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `log_in'
+Completed 500 Internal Server Error in 186ms (ActiveRecord: 0.1ms | Allocations: 6052)
+
+
+  
+NoMethodError (undefined method `name' for #<User id: 1, username: "ronak", email: "r@r.com", password_digest: [FILTERED], remember_token: [FILTERED], created_at: "2023-03-29 09:22:28.763075000 +0000", updated_at: "2023-03-29 09:22:28.763075000 +0000">):
+  
+app/controllers/users_controller.rb:61:in `log_in'
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:23:13 +0530
+Processing by UsersController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1137)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 15084)
+Completed 200 OK in 16ms (Views: 12.1ms | ActiveRecord: 0.5ms | Allocations: 18924)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-29 15:23:26 +0530
+Processing by UsersController#log_in as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"r@r.com", "password"=>"[FILTERED]"}, "commit"=>"login"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "r@r.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `log_in'
+Completed 500 Internal Server Error in 207ms (ActiveRecord: 0.6ms | Allocations: 5005)
+
+
+  
+NameError (undefined local variable or method `root' for #<UsersController:0x0000000001c750>
+
+              redirect_to root
+                          ^^^^):
+  
+app/controllers/users_controller.rb:62:in `log_in'
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:23:37 +0530
+Processing by UsersController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1125)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 15073)
+Completed 200 OK in 17ms (Views: 13.2ms | ActiveRecord: 0.4ms | Allocations: 18914)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-29 15:23:41 +0530
+Processing by UsersController#log_in as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"r@r.com", "password"=>"[FILTERED]"}, "commit"=>"login"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "r@r.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `log_in'
+Completed 500 Internal Server Error in 201ms (ActiveRecord: 0.3ms | Allocations: 4995)
+
+
+  
+NameError (undefined local variable or method `root_path' for #<UsersController:0x00000000020b98>
+
+              redirect_to root_path
+                          ^^^^^^^^^
+Did you mean?  logout_path):
+  
+app/controllers/users_controller.rb:62:in `log_in'
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:23:51 +0530
+Processing by UsersController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1128)
+  Rendered layout layouts/application.html.erb (Duration: 22.2ms | Allocations: 15088)
+Completed 200 OK in 28ms (Views: 23.4ms | ActiveRecord: 0.5ms | Allocations: 18929)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-29 15:23:55 +0530
+Processing by UsersController#log_in as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"r@r.com", "password"=>"[FILTERED]"}, "commit"=>"login"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "r@r.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `log_in'
+Completed 500 Internal Server Error in 196ms (ActiveRecord: 0.3ms | Allocations: 5034)
+
+
+  
+NameError (undefined local variable or method `redirect_to_root_path' for #<UsersController:0x00000000025008>
+
+              redirect_to_root_path
+              ^^^^^^^^^^^^^^^^^^^^^
+Did you mean?  redirect_to):
+  
+app/controllers/users_controller.rb:62:in `log_in'
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:24:37 +0530
+Processing by UsersController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 2.6ms | Allocations: 864)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 3071)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.0ms | Allocations: 3365)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-29 15:24:39 +0530
+Processing by UsersController#log_in as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"xzcv ", "password"=>"[FILTERED]"}, "commit"=>"login"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "xzcv "], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:57:in `log_in'
+Redirected to http://127.0.0.1:3000/login
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms | Allocations: 923)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:24:39 +0530
+Processing by UsersController#login as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 1.0ms | Allocations: 861)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 3053)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms | Allocations: 3333)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:27:23 +0530
+Processing by UsersController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1283)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 4153)
+Completed 200 OK in 16ms (Views: 14.6ms | ActiveRecord: 0.0ms | Allocations: 4978)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:27:58 +0530
+Processing by UsersController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1282)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 4116)
+Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 0.0ms | Allocations: 4973)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2023-03-29 15:28:00 +0530
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 4.5ms | Allocations: 1992)
+  Rendered users/new.html.erb within layouts/application (Duration: 5.7ms | Allocations: 2278)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 4492)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.0ms | Allocations: 4850)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:28:03 +0530
+Processing by UsersController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 5.9ms | Allocations: 860)
+  Rendered layout layouts/application.html.erb (Duration: 17.0ms | Allocations: 3100)
+Completed 200 OK in 21ms (Views: 18.5ms | ActiveRecord: 0.0ms | Allocations: 3378)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2023-03-29 15:28:05 +0530
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 9.8ms | Allocations: 1457)
+  Rendered users/new.html.erb within layouts/application (Duration: 10.9ms | Allocations: 1544)
+  Rendered layout layouts/application.html.erb (Duration: 17.4ms | Allocations: 3764)
+Completed 200 OK in 20ms (Views: 18.9ms | ActiveRecord: 0.0ms | Allocations: 4042)
+
+
+Started GET "/" for 127.0.0.1 at 2023-03-29 15:28:06 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ronak/.rvm/gems/ruby-3.1.2/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ronak/.rvm/gems/ruby-3.1.2/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.7ms | Allocations: 286)
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.0ms | Allocations: 1061)
+
+
+Started GET "/" for 127.0.0.1 at 2023-03-29 15:28:06 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ronak/.rvm/gems/ruby-3.1.2/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ronak/.rvm/gems/ruby-3.1.2/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.4ms | Allocations: 283)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.0ms | Allocations: 956)
+
+
+Started GET "/" for 127.0.0.1 at 2023-03-29 15:28:14 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ronak/.rvm/gems/ruby-3.1.2/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ronak/.rvm/gems/ruby-3.1.2/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.5ms | Allocations: 15)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms | Allocations: 248)
+
+
+Started GET "/" for 127.0.0.1 at 2023-03-29 15:28:14 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/ronak/.rvm/gems/ruby-3.1.2/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/ronak/.rvm/gems/ruby-3.1.2/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.2ms | Allocations: 15)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 221)
+
+
+Started GET "/" for 127.0.0.1 at 2023-03-29 15:30:10 +0530
+Processing by UsersController#root_page as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/root_page.html.erb within layouts/application
+  Rendered users/root_page.html.erb within layouts/application (Duration: 0.2ms | Allocations: 100)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 14780)
+Completed 200 OK in 10ms (Views: 9.7ms | Allocations: 15794)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:30:13 +0530
+Processing by UsersController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1312)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 3645)
+Completed 200 OK in 22ms (Views: 11.5ms | ActiveRecord: 0.4ms | Allocations: 6781)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-29 15:30:16 +0530
+Processing by UsersController#log_in as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"r@r.com", "password"=>"[FILTERED]"}, "commit"=>"login"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "r@r.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:60:in `log_in'
+Completed 500 Internal Server Error in 213ms (ActiveRecord: 0.5ms | Allocations: 5047)
+
+
+  
+NameError (undefined local variable or method `redirect_to_root_path' for #<UsersController:0x000000000299c8>
+
+              redirect_to_root_path
+              ^^^^^^^^^^^^^^^^^^^^^
+Did you mean?  redirect_to):
+  
+app/controllers/users_controller.rb:65:in `log_in'
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:32:16 +0530
+Processing by UsersController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1142)
+  Rendered layout layouts/application.html.erb (Duration: 39.8ms | Allocations: 15125)
+Completed 200 OK in 49ms (Views: 44.6ms | ActiveRecord: 0.5ms | Allocations: 18965)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-29 15:32:20 +0530
+Processing by UsersController#log_in as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"r@r.com", "password"=>"[FILTERED]"}, "commit"=>"login"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "r@r.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:60:in `log_in'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 186ms (ActiveRecord: 0.2ms | Allocations: 1427)
+
+
+Started GET "/" for 127.0.0.1 at 2023-03-29 15:32:20 +0530
+Processing by UsersController#root_page as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering users/root_page.html.erb within layouts/application
+  Rendered users/root_page.html.erb within layouts/application (Duration: 0.0ms | Allocations: 8)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 9019)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.1ms | Allocations: 9329)
+
+
+  
+ActionView::Template::Error (undefined method `name' for #<User id: 1, username: "ronak", email: "r@r.com", password_digest: [FILTERED], remember_token: [FILTERED], created_at: "2023-03-29 09:22:28.763075000 +0000", updated_at: "2023-03-29 09:22:28.763075000 +0000">):
+    34: <% if current_user %>
+    35: 
+    36:       <li class="nav-item d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3">
+    37:         <a> Hello <%= current_user.name  %></a>
+    38:       </li>
+    39: 
+    40:       <li class="nav-item d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3">
+  
+app/views/layouts/application.html.erb:37
+Started GET "/" for 127.0.0.1 at 2023-03-29 15:33:00 +0530
+Processing by UsersController#root_page as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/root_page.html.erb within layouts/application
+  Rendered users/root_page.html.erb within layouts/application (Duration: 0.3ms | Allocations: 99)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 3868)
+Completed 200 OK in 11ms (Views: 9.3ms | ActiveRecord: 0.2ms | Allocations: 4667)
+
+
+Started GET "/" for 127.0.0.1 at 2023-03-29 15:33:03 +0530
+Processing by UsersController#root_page as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/root_page.html.erb within layouts/application
+  Rendered users/root_page.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 2918)
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.1ms | Allocations: 3196)
+
+
+Started GET "/logout" for 127.0.0.1 at 2023-03-29 15:33:06 +0530
+Processing by UsersController#logout as HTML
+Redirected to http://127.0.0.1:3000/login
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 356)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:33:06 +0530
+Processing by UsersController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1140)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 3354)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms | Allocations: 3688)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-29 15:33:10 +0530
+Processing by UsersController#log_in as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"r@r.com", "password"=>"[FILTERED]"}, "commit"=>"login"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "r@r.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:60:in `log_in'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 210ms (ActiveRecord: 0.3ms | Allocations: 990)
+
+
+Started GET "/" for 127.0.0.1 at 2023-03-29 15:33:10 +0530
+Processing by UsersController#root_page as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering users/root_page.html.erb within layouts/application
+  Rendered users/root_page.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 2957)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.1ms | Allocations: 3265)
+
+
+Started GET "/logout" for 127.0.0.1 at 2023-03-29 15:33:59 +0530
+Processing by UsersController#logout as HTML
+Redirected to http://127.0.0.1:3000/login
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 336)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:33:59 +0530
+Processing by UsersController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1278)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 4053)
+Completed 200 OK in 14ms (Views: 12.0ms | ActiveRecord: 0.0ms | Allocations: 4884)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-29 15:34:02 +0530
+Processing by UsersController#log_in as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"r@r.com", "password"=>"[FILTERED]"}, "commit"=>"login"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "r@r.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:60:in `log_in'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 194ms (ActiveRecord: 0.2ms | Allocations: 1066)
+
+
+Started GET "/" for 127.0.0.1 at 2023-03-29 15:34:03 +0530
+Processing by UsersController#root_page as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering users/root_page.html.erb within layouts/application
+  Rendered users/root_page.html.erb within layouts/application (Duration: 0.2ms | Allocations: 73)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 3010)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.1ms | Allocations: 3386)
+
+
+Started GET "/logout" for 127.0.0.1 at 2023-03-29 15:41:05 +0530
+Processing by UsersController#logout as HTML
+Redirected to http://127.0.0.1:3000/login
+Completed 302 Found in 2ms (Allocations: 347)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:41:05 +0530
+Processing by UsersController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1263)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 4037)
+Completed 200 OK in 12ms (Views: 9.9ms | Allocations: 4863)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2023-03-29 15:41:08 +0530
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 9.3ms | Allocations: 1877)
+  Rendered users/new.html.erb within layouts/application (Duration: 11.6ms | Allocations: 2154)
+  Rendered layout layouts/application.html.erb (Duration: 16.5ms | Allocations: 4367)
+Completed 200 OK in 19ms (Views: 17.8ms | Allocations: 4720)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-29 15:41:59 +0530
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"r@r.com", "email"=>"r@r.com", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+[31mUnpermitted parameters: :password_digest, :password_confirmation. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f282be8d0c8>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"r@r.com", "email"=>"r@r.com", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User", "controller"=>"users", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "r@r.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "r@r.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 6.5ms | Allocations: 3792)
+  Rendered users/new.html.erb within layouts/application (Duration: 6.8ms | Allocations: 3879)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 6083)
+Completed 422 Unprocessable Entity in 20ms (Views: 9.7ms | ActiveRecord: 1.0ms | Allocations: 10619)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-29 15:42:13 +0530
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"r@r.com", "email"=>"r@r.com", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+[31mUnpermitted parameters: :password_digest, :password_confirmation. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f282be09548>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"r@r.com", "email"=>"r@r.com", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User", "controller"=>"users", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "r@r.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "r@r.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 8.1ms | Allocations: 3616)
+  Rendered users/new.html.erb within layouts/application (Duration: 8.5ms | Allocations: 3703)
+  Rendered layout layouts/application.html.erb (Duration: 12.6ms | Allocations: 5907)
+Completed 422 Unprocessable Entity in 33ms (Views: 13.6ms | ActiveRecord: 1.1ms | Allocations: 9695)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-29 15:42:14 +0530
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"r@r.com", "email"=>"r@r.com", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+[31mUnpermitted parameters: :password_digest, :password_confirmation. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f282bd6e0c0>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"r@r.com", "email"=>"r@r.com", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User", "controller"=>"users", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "r@r.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "r@r.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 14.2ms | Allocations: 3616)
+  Rendered users/new.html.erb within layouts/application (Duration: 14.6ms | Allocations: 3703)
+  Rendered layout layouts/application.html.erb (Duration: 17.9ms | Allocations: 5922)
+Completed 422 Unprocessable Entity in 39ms (Views: 18.8ms | ActiveRecord: 1.3ms | Allocations: 9707)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-29 15:42:14 +0530
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"r@r.com", "email"=>"r@r.com", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+[31mUnpermitted parameters: :password_digest, :password_confirmation. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f2859d2b9e0>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"r@r.com", "email"=>"r@r.com", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User", "controller"=>"users", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "r@r.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "r@r.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 8.2ms | Allocations: 3616)
+  Rendered users/new.html.erb within layouts/application (Duration: 8.8ms | Allocations: 3703)
+  Rendered layout layouts/application.html.erb (Duration: 14.3ms | Allocations: 5922)
+Completed 422 Unprocessable Entity in 26ms (Views: 14.9ms | ActiveRecord: 0.7ms | Allocations: 9704)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-29 15:42:14 +0530
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"r@r.com", "email"=>"r@r.com", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+[31mUnpermitted parameters: :password_digest, :password_confirmation. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f28585b6530>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"r@r.com", "email"=>"r@r.com", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User", "controller"=>"users", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "r@r.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "r@r.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 9.1ms | Allocations: 3616)
+  Rendered users/new.html.erb within layouts/application (Duration: 9.6ms | Allocations: 3703)
+  Rendered layout layouts/application.html.erb (Duration: 13.4ms | Allocations: 5907)
+Completed 422 Unprocessable Entity in 33ms (Views: 14.2ms | ActiveRecord: 1.1ms | Allocations: 9683)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-29 15:42:15 +0530
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"r@r.com", "email"=>"r@r.com", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+[31mUnpermitted parameters: :password_digest, :password_confirmation. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f2858113f50>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"r@r.com", "email"=>"r@r.com", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User", "controller"=>"users", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "r@r.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "r@r.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 4.9ms | Allocations: 3616)
+  Rendered users/new.html.erb within layouts/application (Duration: 5.2ms | Allocations: 3703)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 5907)
+Completed 422 Unprocessable Entity in 17ms (Views: 8.4ms | ActiveRecord: 0.6ms | Allocations: 9695)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-29 15:42:15 +0530
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"r@r.com", "email"=>"r@r.com", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+[31mUnpermitted parameters: :password_digest, :password_confirmation. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f2858087b68>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"r@r.com", "email"=>"r@r.com", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User", "controller"=>"users", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "r@r.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "r@r.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 8.3ms | Allocations: 3616)
+  Rendered users/new.html.erb within layouts/application (Duration: 8.6ms | Allocations: 3703)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 5907)
+Completed 422 Unprocessable Entity in 27ms (Views: 12.2ms | ActiveRecord: 0.8ms | Allocations: 9692)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-29 15:42:15 +0530
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"r@r.com", "email"=>"r@r.com", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+[31mUnpermitted parameters: :password_digest, :password_confirmation. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f282bfa8750>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"r@r.com", "email"=>"r@r.com", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User", "controller"=>"users", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "r@r.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "r@r.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 8.8ms | Allocations: 3616)
+  Rendered users/new.html.erb within layouts/application (Duration: 9.2ms | Allocations: 3703)
+  Rendered layout layouts/application.html.erb (Duration: 12.6ms | Allocations: 5907)
+Completed 422 Unprocessable Entity in 32ms (Views: 13.2ms | ActiveRecord: 1.1ms | Allocations: 9698)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-29 15:42:41 +0530
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"r@r.com", "email"=>"r@r.com", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+[31mUnpermitted parameters: :password_digest, :password_confirmation. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f282bdc9b50>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"r@r.com", "email"=>"r@r.com", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User", "controller"=>"users", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "r@r.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "r@r.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 6.6ms | Allocations: 3147)
+  Rendered users/new.html.erb within layouts/application (Duration: 6.8ms | Allocations: 3260)
+  Rendered layout layouts/application.html.erb (Duration: 15.9ms | Allocations: 17229)
+Completed 422 Unprocessable Entity in 27ms (Views: 16.8ms | ActiveRecord: 0.9ms | Allocations: 25123)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2023-03-29 15:43:25 +0530
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 4.2ms | Allocations: 2090)
+  Rendered users/new.html.erb within layouts/application (Duration: 5.9ms | Allocations: 2403)
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 5180)
+Completed 200 OK in 18ms (Views: 15.6ms | ActiveRecord: 0.0ms | Allocations: 6062)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-29 15:43:36 +0530
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"sdssfvf", "email"=>"vsd", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+[31mUnpermitted parameters: :password_digest, :password_confirmation. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f285812fc78>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"sdssfvf", "email"=>"vsd", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User", "controller"=>"users", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "sdssfvf"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "vsd"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.2ms | Allocations: 1989)
+  Rendered users/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 2076)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 4280)
+Completed 422 Unprocessable Entity in 13ms (Views: 6.6ms | ActiveRecord: 0.4ms | Allocations: 8238)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-29 15:44:00 +0530
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"sdssfvf", "email"=>"vsd", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+[31mUnpermitted parameters: :password_digest, :password_confirmation. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f28580966b8>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"sdssfvf", "email"=>"vsd", "password_digest"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User", "controller"=>"users", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "sdssfvf"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "vsd"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 6.7ms | Allocations: 2820)
+  Rendered users/new.html.erb within layouts/application (Duration: 8.0ms | Allocations: 3128)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 5888)
+Completed 422 Unprocessable Entity in 21ms (Views: 13.3ms | ActiveRecord: 0.4ms | Allocations: 10212)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-29 15:45:36 +0530
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"sdssfvf", "email"=>"vsd", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f282bf96528>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"sdssfvf", "email"=>"vsd", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User", "controller"=>"users", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "sdssfvf"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "vsd"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "remember_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "sdssfvf"], ["email", "vsd"], ["password_digest", "[FILTERED]"], ["remember_token", "[FILTERED]"], ["created_at", "2023-03-29 10:15:36.253008"], ["updated_at", "2023-03-29 10:15:36.253008"]]
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+Completed 500 Internal Server Error in 198ms (ActiveRecord: 2.8ms | Allocations: 8410)
+
+
+  
+NameError (undefined local variable or method `root' for #<UsersController:0x00000000032e10>
+
+        format.html { redirect_to root, notice: "User was successfully created." }
+                                  ^^^^):
+  
+app/controllers/users_controller.rb:27:in `block (2 levels) in create'
+app/controllers/users_controller.rb:25:in `create'
+Started GET "/users/new" for 127.0.0.1 at 2023-03-29 15:46:09 +0530
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.1ms | Allocations: 1734)
+  Rendered users/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1847)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 15823)
+Completed 200 OK in 17ms (Views: 12.5ms | ActiveRecord: 0.5ms | Allocations: 19661)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2023-03-29 15:46:11 +0530
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 8.1ms | Allocations: 1470)
+  Rendered users/new.html.erb within layouts/application (Duration: 8.8ms | Allocations: 1557)
+  Rendered layout layouts/application.html.erb (Duration: 20.8ms | Allocations: 3769)
+Completed 200 OK in 23ms (Views: 22.1ms | ActiveRecord: 0.0ms | Allocations: 4072)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-29 15:46:19 +0530
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"sdgvf", "email"=>"sdvc", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f282bf5ff78>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"sdgvf", "email"=>"sdvc", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User", "controller"=>"users", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "sdgvf"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "sdvc"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "remember_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "sdgvf"], ["email", "sdvc"], ["password_digest", "[FILTERED]"], ["remember_token", "[FILTERED]"], ["created_at", "2023-03-29 10:16:20.154107"], ["updated_at", "2023-03-29 10:16:20.154107"]]
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 193ms (ActiveRecord: 2.4ms | Allocations: 4614)
+
+
+Started GET "/" for 127.0.0.1 at 2023-03-29 15:46:20 +0530
+Processing by UsersController#root_page as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering users/root_page.html.erb within layouts/application
+  Rendered users/root_page.html.erb within layouts/application (Duration: 0.3ms | Allocations: 93)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 2501)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.0ms | Allocations: 2882)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:46:24 +0530
+Processing by UsersController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1058)
+  Rendered layout layouts/application.html.erb (Duration: 14.8ms | Allocations: 3270)
+Completed 200 OK in 18ms (Views: 15.9ms | ActiveRecord: 0.0ms | Allocations: 3601)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2023-03-29 15:46:46 +0530
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.6ms | Allocations: 1752)
+  Rendered users/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1865)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | Allocations: 15842)
+Completed 200 OK in 18ms (Views: 13.4ms | ActiveRecord: 0.5ms | Allocations: 19644)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-03-29 15:46:55 +0530
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"v", "email"=>"df", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+[31mUnpermitted parameter: :password_confirmation. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00007f28580b5270>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"username"=>"v", "email"=>"df", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User", "controller"=>"users", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "v"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "df"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "remember_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["username", "v"], ["email", "df"], ["password_digest", "[FILTERED]"], ["remember_token", "[FILTERED]"], ["created_at", "2023-03-29 10:16:55.261254"], ["updated_at", "2023-03-29 10:16:55.261254"]]
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:26:in `block in create'
+Redirected to http://127.0.0.1:3000/login
+Completed 302 Found in 201ms (ActiveRecord: 2.6ms | Allocations: 4629)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:46:55 +0530
+Processing by UsersController#login as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 1.0ms | Allocations: 894)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 3122)
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.0ms | Allocations: 3416)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-29 15:46:59 +0530
+Processing by UsersController#log_in as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"g@gg.com", "password"=>"[FILTERED]"}, "commit"=>"login"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "g@gg.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:60:in `log_in'
+Redirected to http://127.0.0.1:3000/login
+Completed 302 Found in 9ms (ActiveRecord: 0.5ms | Allocations: 1077)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:46:59 +0530
+Processing by UsersController#login as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 2.7ms | Allocations: 888)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 3110)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.0ms | Allocations: 3390)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-29 15:47:03 +0530
+Processing by UsersController#log_in as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"ga@kg.g", "password"=>"[FILTERED]"}, "commit"=>"login"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "ga@kg.g"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:60:in `log_in'
+Redirected to http://127.0.0.1:3000/login
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 875)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:47:03 +0530
+Processing by UsersController#login as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 1.0ms | Allocations: 879)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 3095)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms | Allocations: 3375)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-29 15:47:06 +0530
+Processing by UsersController#log_in as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"r@r.com", "password"=>"[FILTERED]"}, "commit"=>"login"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "r@r.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:60:in `log_in'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 210ms (ActiveRecord: 0.2ms | Allocations: 957)
+
+
+Started GET "/" for 127.0.0.1 at 2023-03-29 15:47:06 +0530
+Processing by UsersController#root_page as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering users/root_page.html.erb within layouts/application
+  Rendered users/root_page.html.erb within layouts/application (Duration: 0.0ms | Allocations: 8)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 3660)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.1ms | Allocations: 3924)
+
+
+Started GET "/logout" for 127.0.0.1 at 2023-03-29 15:47:45 +0530
+Processing by UsersController#logout as HTML
+Redirected to http://127.0.0.1:3000/login
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 322)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:47:45 +0530
+Processing by UsersController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 2.5ms | Allocations: 857)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 3069)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms | Allocations: 3346)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-29 15:47:58 +0530
+Processing by UsersController#log_in as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"g@gg.com", "password"=>"[FILTERED]"}, "commit"=>"login"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "g@gg.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:60:in `log_in'
+Redirected to http://127.0.0.1:3000/login
+Completed 302 Found in 5ms (ActiveRecord: 0.2ms | Allocations: 899)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:47:58 +0530
+Processing by UsersController#login as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 1.9ms | Allocations: 885)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 3110)
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.0ms | Allocations: 3391)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-29 15:48:02 +0530
+Processing by UsersController#log_in as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"r@r.com", "password"=>"[FILTERED]"}, "commit"=>"login"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "r@r.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:60:in `log_in'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 194ms (ActiveRecord: 0.3ms | Allocations: 955)
+
+
+Started GET "/" for 127.0.0.1 at 2023-03-29 15:48:02 +0530
+Processing by UsersController#root_page as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering users/root_page.html.erb within layouts/application
+  Rendered users/root_page.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 2945)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.2ms | Allocations: 3209)
+
+
+Started GET "/" for 127.0.0.1 at 2023-03-29 15:48:20 +0530
+Processing by UsersController#root_page as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/root_page.html.erb within layouts/application
+  Rendered users/root_page.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:13:in `current_user'
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 2911)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.1ms | Allocations: 3172)
+
+
+Started GET "/logout" for 127.0.0.1 at 2023-03-29 15:48:21 +0530
+Processing by UsersController#logout as HTML
+Redirected to http://127.0.0.1:3000/login
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 342)
+
+
+Started GET "/login" for 127.0.0.1 at 2023-03-29 15:48:21 +0530
+Processing by UsersController#login as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/login.html.erb within layouts/application
+  Rendered users/login.html.erb within layouts/application (Duration: 4.3ms | Allocations: 845)
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | Allocations: 3059)
+Completed 200 OK in 14ms (Views: 13.0ms | ActiveRecord: 0.0ms | Allocations: 3336)
+
+
