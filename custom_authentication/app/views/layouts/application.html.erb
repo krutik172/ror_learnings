@@ -33,13 +33,19 @@
 
 <% if current_user %>
 
-      <li class="nav-item d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3">
+      <li class="nav-item  d-none d-lg-inline-block mr-auto mb-3 mb-md-0 ml-md-3">
         <a> Hello <%= current_user.username  %></a>
       </li>
-
+      <li class="nav-item d-none d-lg-inline-block  mb-3 mb-md-0 ml-md-3">
+         <%= link_to "Edit", edit_user_path(current_user)%>  
+      </li>
+    
       <li class="nav-item d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3">
         <a class="nav-link" href="/logout">logout</a>
       </li>
+        <div class="d-flex ml-auto justify-content-end">
+          <img src= <%= current_user.avatar %> alt="My Image" class="navbar-img  rounded-circle" width="50" height="50">
+      </div>
       <% else %>
         <li class="nav-item d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3">
         <a class="nav-link" href="/users/new">sing Up</a>
@@ -47,9 +53,7 @@
          <li class="nav-item d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3">
         <a class="nav-link" href="/login">Log In</a>
       </li>
-
 <%end %>
-
 
   </div>
 </nav>
