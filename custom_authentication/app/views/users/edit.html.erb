@@ -1,6 +1,19 @@
-<h1>Editing user</h1>
+<h1>Editing Email</h1>
 
-<%= render "form", user: @user %>
+<%= form_with(model: @user) do |form| %>
+
+
+
+  <div>
+    <%= form.label :email, style: "display: block" %>
+    <%= form.text_field :email, required: true  %>
+  </div>
+
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
 
 <br>
 
